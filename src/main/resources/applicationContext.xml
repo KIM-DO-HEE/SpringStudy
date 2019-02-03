@@ -17,14 +17,14 @@
 	<bean id="userDAO" class = "com.spring.biz.user.impl.UserDAO"></bean>
 	 -->
 	 
-	 
+	<bean id="around" class="com.spring.biz.common.AroundAdvice"/>
 	<bean id="beforeAdvice" class="com.spring.biz.common.BeforeAdvice"/>
-	<bean id="after" class="com.spring.biz.common.AfterAdvice"/>
+	<bean id="afterThrowing" class="com.spring.biz.common.AfterThrowingAdvice"/>
 	<aop:config>
 		<aop:pointcut expression="execution(* com.spring.biz..*Impl.*(..))" id="allPointcut"/>
 				
-		<aop:aspect ref="beforeAdvice">
-			<aop:before pointcut-ref="allPointcut" method="beforeLog" />
+		<aop:aspect ref="around">
+			<aop:around pointcut-ref="allPointcut" method = "aroundLog" />
 		</aop:aspect>
 		
 		<!-- 

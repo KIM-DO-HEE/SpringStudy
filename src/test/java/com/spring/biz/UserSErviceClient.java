@@ -19,7 +19,7 @@ public class UserSErviceClient {
 		vo.setId("test");
 		vo.setPw("test123");
 		
-		System.out.println("vo:"+vo);
+		//System.out.println("vo:"+vo);
 		
 		UserVO user = userService.getUser(vo);
 		System.out.println(user);

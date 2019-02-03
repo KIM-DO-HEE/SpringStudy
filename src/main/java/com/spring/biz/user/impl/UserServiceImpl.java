@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
 	public UserVO getUser(UserVO vo) {
 		// TODO Auto-generated method stub
 		return userDAO.getUser(vo);
-	}
+	} 
 	
 	
 }
